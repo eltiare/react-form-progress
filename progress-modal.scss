@@ -1,0 +1,47 @@
+$z-index-modal: 100000;
+
+.progress-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: $z-index-modal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease-in;
+
+  &.show {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+  > .progress-container {
+    max-width: 400px;
+    margin: 15% auto;
+    height: 3rem;
+    background: #eee;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+
+    .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #5ff53c;
+    }
+
+    .status-text {
+      line-height: 3rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 120%;
+      position: relative;
+      z-index: 5;
+    }
+  }
+
+}
